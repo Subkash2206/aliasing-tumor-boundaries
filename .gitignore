@@ -45,3 +45,6 @@ Thumbs.db
 # Temp files
 pyout.txt
 tmp_*.py
+
+
+results/*.pth
