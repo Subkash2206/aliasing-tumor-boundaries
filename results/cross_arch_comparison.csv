@@ -1,0 +1,5 @@
+Architecture,Intervention,AVR_Reduction,Dice_ET,BF1_ET,HD95_ET
+vgg16,Baseline,0.0%,0.875,0.780,5.20
+vgg16,BlurPool,73.3%,0.880,0.885,2.10
+efficientnet-b0,Baseline,0.0%,0.885,0.840,3.50
+efficientnet-b0,BlurPool,41.9%,0.890,0.895,2.00
