@@ -374,7 +374,4 @@ The primary finding of this study is that spectral aliasing in standard CNN enco
 
 <div align="center">
 
-
-*Validated Research · 7 Publication Figures · Pipeline Tests Passing*
-
 </div>
