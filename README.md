@@ -409,6 +409,8 @@ Users of this repository must adhere to the data usage agreement provided by the
 **Access:** 
 The raw data is available via the Synapse platform at [Synapse ID: syn27046444](https://www.synapse.org/#!Synapse:syn27046444).
 
+Mirror: [BRaTS 2021 Task 1 Dataset](https://www.kaggle.com/datasets/dschettler8845/brats-2021-task1?resource=download).
+
 ---
 
 <div align="center">
