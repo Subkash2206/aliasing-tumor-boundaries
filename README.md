@@ -299,6 +299,12 @@ BraTS2021_Training_Data/
 │   └── BraTS2021_00000_seg.nii.gz
 └── ...
 ```
+**Sampling Procedure:** To ensure zero selection bias, we utilized a Sequential
+Sampling Procedure, selecting the first 15 consecutive cases from the official
+BraTS 2021 validation split. Although this constitutes 15 patients, it yields
+N = 251 individual axial slices for per-sample correlation analysis, sufficient
+statistical power for p < 0.001 thresholds while maintaining full computational
+reproducibility.
 
 ### Training
 
@@ -353,7 +359,20 @@ The primary finding of this study is that spectral aliasing in standard CNN enco
 
 **The EfficientNet result is a useful control.** EfficientNet-B0's lower baseline AVR and smaller BlurPool gain are consistent with the hypothesis: its depthwise separable convolutions already perform implicit frequency separation. This architecture-specific variation in aliasing severity is a testable prediction of the Nyquist framework.
 
-**Limitations.** The correlation analysis is conducted on N = 15 patients, sufficient for strong statistical signals but limited for sub-group analysis. The AVR metric is measured at the encoder's first layer; a full layer-wise profile across the U-Net decoder arms remains future work. All experiments use 2D axial slices rather than volumetric 3D processing.
+**Methodological Choice: 2D vs. 3D.** While the BraTS benchmark is volumetric,
+this study deliberately utilizes 2D axial slices to isolate in-plane spectral
+leakage. By fixing the analysis to the 2D plane, we eliminate confounding
+variables inherent in 3D processing: anisotropic voxel spacing, 3D
+patch-sampling artifacts, and inter-slice interpolation noise. This enables a
+controlled signal-processing investigation into how strided kernels violate the
+Nyquist-Shannon theorem. Extension to full volumetric 3D processing is future
+work.
+
+**Limitations.** The correlation analysis is conducted on N = 15 patients
+(N = 251 axial slices), sufficient for strong statistical signals at p < 0.001
+but limited for demographic sub-group analysis. The AVR metric is measured at
+the encoder's first layer; a full layer-wise profile across the U-Net decoder
+arms remains future work.
 
 ---
 
