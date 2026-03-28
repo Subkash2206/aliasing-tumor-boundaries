@@ -36,7 +36,7 @@ The key numbers: **r = -0.865** between aliasing energy and boundary accuracy, *
 
 ![Error Heatmaps](results/atlas/fig7_error_heatmaps.png)
 
-*Orange = False Positives, Cyan = False Negatives. The baseline scatters errors in a diffuse halo around the tumor margin. BlurPool tightens them to the boundary itself.*
+*Orange = False Positives, Cyan = False Negatives. High spectral aliasing in the baseline frequently leads to Global Suppression (missed detections), whereas BlurPool restores tumor localization and confines residual error strictly to the boundary margin.*
 
 ---
 
@@ -232,9 +232,9 @@ The final experiment examines the geometric distribution of errors relative to t
 
 ![Error Heatmaps](results/atlas/fig7_error_heatmaps.png)
 
-*Left: baseline errors. Right: BlurPool errors. The baseline produces a diffuse halo of FPs and FNs scattered broadly around the margin. BlurPool tightens errors to the boundary itself, with substantially reduced hallucinated area.*
+*Left: baseline errors. Right: BlurPool errors. The baseline model frequently exhibits global suppression in high-aliasing slices, failing to detect the tumor entirely. In contrast, BlurPool restores tumor localization and restricts residual error to the specific boundary margin.*
 
-The baseline model's broad error distribution reflects its inability to precisely localize the boundary. The BlurPool model makes sharper, more confident decisions: when it is wrong, it is wrong by less.
+The baseline model’s error profile is characterized by localization failure, where spectral instability prevents the network from identifying tumor regions entirely. The BlurPool model restores the network's spatial sensitivity, shifting the error profile from 'global misses' to 'boundary-specific' precision adjustments.
 
 ---
 
