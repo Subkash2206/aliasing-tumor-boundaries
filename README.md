@@ -369,6 +369,45 @@ The primary finding of this study is that spectral aliasing in standard CNN enco
   url         = {https://github.com/Subkash2206/aliasing-tumor-boundaries}
 }
 ```
+---
+
+# License and Data Attribution
+
+## MIT License
+
+Copyright (c) 2026 Subhash Kashyap
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## Dataset Attribution (BraTS 2021)
+
+The experimental results, visualizations, and model training in this repository were conducted using the **RSNA-ASNR-MICCAI BraTS 2021 Dataset**. 
+
+Users of this repository must adhere to the data usage agreement provided by the BraTS organizers. This project acknowledges the invaluable contribution of the BraTS community in providing standardized multi-modal MRI data for neuro-oncology research.
+
+**Dataset Citation:**
+> Baid, U., et al. (2021). The RSNA-ASNR-MICCAI BraTS 2021 Baseline Pipeline: Segmentation of Brain Tumors using Deep Learning. arXiv preprint arXiv:2107.02314.
+
+**Access:** 
+The raw data is available via the Synapse platform at [Synapse ID: syn27046444](https://www.synapse.org/#!Synapse:syn27046444).
 
 ---
 
