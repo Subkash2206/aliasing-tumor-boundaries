@@ -1,7 +1,0 @@
-torch
-torchvision
-monai
-nibabel
-numpy
-scikit-learn
-matplotlib
