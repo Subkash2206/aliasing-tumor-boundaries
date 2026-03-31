@@ -352,7 +352,7 @@ pytest tests/ -v
 
 The primary finding of this study is that spectral aliasing in standard CNN encoders is not a theoretical curiosity but a structural bottleneck with clinically meaningful consequences. A Cohen's d of 2.66 places this intervention in the "large" effect category, larger than the effect sizes reported for many architectural innovations in the BraTS literature.
 
-**The boundary-aliasing relationship is causal, not incidental.** The regression analysis establishes a near-linear, monotonically negative relationship between AVR and BF1 across both Pearson and Spearman measures and across all three BraTS sub-regions. The shift-invariance test provides convergent evidence from a different angle: the same architectural correction that reduces AVR also restores the equivariance that sampling theory predicts it should have.
+**The boundary-aliasing relationship is structural, not incidental.** The regression analysis establishes a near-linear, monotonically negative relationship between AVR and BF1 across both Pearson and Spearman measures and across all three BraTS sub-regions. The shift-invariance test provides convergent evidence from a different angle: the same architectural correction that reduces AVR also restores the equivariance that sampling theory predicts it should have.
 
 **Stage 0 is the architectural Achilles heel.** The ablation finding that 59% of total gain comes from a single-stage intervention at the 7x7 stem is a practically useful result. For deployment scenarios with inference-time constraints, a minimal intervention at Stage 0 alone recovers the majority of the benefit at essentially zero additional parameter cost.
 
