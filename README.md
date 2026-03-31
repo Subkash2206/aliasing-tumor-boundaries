@@ -8,13 +8,12 @@
 [![MONAI](https://img.shields.io/badge/Framework-MONAI_1.x-green)](https://monai.io)
 [![Dataset](https://img.shields.io/badge/Dataset-BraTS_2021-blue)](https://www.synapse.org/#!Synapse:syn27046444/wiki/616571)
 [![Effect Size](https://img.shields.io/badge/Cohen's_d-2.66-darkred)](https://github.com/Subkash2206/aliasing-tumor-boundaries)
-[![Tests](https://img.shields.io/badge/Pipeline_Tests-9%2F9_Passing-success)](https://github.com/Subkash2206/aliasing-tumor-boundaries)
 
 ---
 
 ## TL;DR
 
-Standard U-Net encoders violate the Nyquist-Shannon Sampling Theorem at every strided downsampling step. This project proves that the resulting spectral aliasing directly corrupts brain tumor boundary delineation, and that inserting a low-pass filter (BlurPool) before each stride step fixes it completely.
+Standard U-Net encoders violate the Nyquist-Shannon Sampling Theorem at every strided downsampling step. This project proves that the resulting spectral aliasing directly corrupts brain tumor boundary delineation, and that inserting a low-pass filter (BlurPool) before each stride step reduces it substantially.
 
 The key numbers: **r = -0.865** between aliasing energy and boundary accuracy, **+17.1% absolute BF1 improvement** on Enhancing Tumor segmentation, **Cohen's d = 2.66**. A single-stage fix at the 7x7 stem recovers 59% of the total gain at near-zero cost.
 
@@ -374,20 +373,6 @@ but limited for demographic sub-group analysis. The AVR metric is measured at
 the encoder's first layer; a full layer-wise profile across the U-Net decoder
 arms remains future work.
 
----
-
-## Citation
-
-```bibtex
-@techreport{kashyap2026spectral,
-  title       = {Spectral Aliasing in CNN-Based Brain Tumor Segmentation:
-                 From Nyquist Violations to Diagnostic Unreliability},
-  author      = {Kashyap, Subhash},
-  institution = {Indian Statistical Institute, Bangalore},
-  year        = {2026},
-  url         = {https://github.com/Subkash2206/aliasing-tumor-boundaries}
-}
-```
 ---
 
 # License and Data Attribution
