@@ -1,5 +1,10 @@
 {
-    "p_value": 6.103515625e-05,
-    "effect_size": 2.666051065075119,
-    "mean_improvement": 0.17098357302755704
+    "dataset_size": 251,
+    "statistical_test": "Wilcoxon Signed-Rank Test (Paired, N=251)",
+    "validation_p_value": 0.39900103153523603,
+    "effect_size_cohens_d": -0.08681337554843042,
+    "mean_bf1_delta": -0.007727322938315098,
+    "baseline_avr_mean": 0.0661050010823929,
+    "blurpool_avr_mean": 0.03346130215487704,
+    "avr_reduction_percent": 49.381587463902974
 }

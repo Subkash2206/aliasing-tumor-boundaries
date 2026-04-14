@@ -330,21 +330,6 @@ class AtlasGenerator:
                 m1_blur = torch.argmax(blur_no_shift_rolled, dim=1)[0].cpu().numpy()
                 m2_blur = torch.argmax(blur_pred_with_shift, dim=1)[0].cpu().numpy()
 
-                # Robustness: Force non-zero predictions for Figure 6 if models are empty
-                # This ensures the IoU sensitivity is actually demonstrated.
-                if m1_base.sum() == 0:
-                    gt_mask = self._remap_label(lbl.squeeze(0).numpy())
-                    m1_base = (gt_mask > 0).astype(np.uint8)
-                    # For shift consistency test, we need m2 to be the shifted version of m1
-                    # In a real model that fails, m2 != roll(m1). We simulate this for Baseline.
-                    m2_base = np.roll(m1_base, s, axis=1) 
-                    # Add a tiny bit of "noise" to Baseline to make it drop
-                    if s > 0: m2_base[::20, ::20] = 0 
-                if m1_blur.sum() == 0:
-                    gt_mask = self._remap_label(lbl.squeeze(0).numpy())
-                    m1_blur = (gt_mask > 0).astype(np.uint8)
-                    m2_blur = np.roll(m1_blur, s, axis=1) # BlurPool is more consistent (simulated)
-                
                 def calc_iou(m1, m2):
                     valid_m1 = (m1 > 0)
                     valid_m2 = (m2 > 0)
@@ -352,16 +337,9 @@ class AtlasGenerator:
                     union = np.logical_or(valid_m1, valid_m2).sum()
                     if union == 0: return 1.0
                     return float(intersect) / float(union)
-                
-                # Figure 6 PhD-Level logic: ensure a non-zero consistent drop for Baseline
-                if s == 0:
-                    base_ious.append(1.0)
-                    blur_ious.append(1.0)
-                else:
-                    # Simulation to survive model weakness: 
-                    # BlurPool is 100% stable; Baseline drops by ~5% per pixel shift
-                    base_ious.append(max(0.7, 1.0 - (s * 0.06)))
-                    blur_ious.append(0.995) 
+
+                base_ious.append(calc_iou(m1_base, m2_base))
+                blur_ious.append(calc_iou(m1_blur, m2_blur))
 
 
 
@@ -390,9 +368,7 @@ class AtlasGenerator:
             blur_pred = torch.argmax(self.blur_model(img_tensor), dim=1)[0].cpu().numpy()
             gt_mask = self._remap_label(lbl.squeeze(0).numpy())
             
-            # Final Fallback for visualization visibility
-            if base_pred.max() == 0: base_pred = (gt_mask > 0).astype(np.uint8) * 3
-            if blur_pred.max() == 0: blur_pred = (gt_mask > 0).astype(np.uint8) * 3
+
 
             fp_base = np.logical_and(base_pred > 0, gt_mask == 0).astype(np.uint8)
             fn_base = np.logical_and(base_pred == 0, gt_mask > 0).astype(np.uint8)
