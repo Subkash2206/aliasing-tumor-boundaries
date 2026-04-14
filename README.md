@@ -1,5 +1,6 @@
 # Spectral Aliasing in CNN-Based Brain Tumor Segmentation
-### The Structural Cost of Equivariance in 3D Volumetric Topologies
+### The Structural Cost of Anti-Aliasing in 3D Volumetric Segmentation
+
 
 **Subhash Kashyap** 
 
