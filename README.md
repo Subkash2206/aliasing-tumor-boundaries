@@ -1,8 +1,9 @@
 # Spectral Aliasing in CNN-Based Brain Tumor Segmentation
 ### The Structural Cost of Anti-Aliasing in 3D Volumetric Segmentation
 
+**[Accepted at Medical Imaging with Deep Learning (MIDL) 2026](https://openreview.net/forum?id=F7RaWxyKXD)**
 
-**Subhash Kashyap** 
+**Subhash Kashyap**
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red?logo=pytorch&logoColor=white)](https://pytorch.org)
@@ -277,11 +278,12 @@ State of the art Volumetric medical segmentors do not just passively tolerate su
 ## Citation
 
 ```bibtex
-@techreport{kashyap2026spectral,
-  title       = {Spectral Aliasing in CNN-Based Brain Tumor Segmentation: The Structural Cost of Equivariance in 3D Volumetric Topologies},
-  author      = {Kashyap, Subhash},
-  institution = {National Institute of Technology, Rourkela},
-  year        = {2026},
-  url         = {https://github.com/Subkash2206/aliasing-tumor-boundaries}
+@inproceedings{
+kashyap2026the,
+title={The Structural Cost of Anti-Aliasing in 3D Volumetric Segmentation},
+author={Subhash Kashyap},
+booktitle={Medical Imaging with Deep Learning - Short Papers},
+year={2026},
+url={https://openreview.net/forum?id=F7RaWxyKXD}
 }
 ```
