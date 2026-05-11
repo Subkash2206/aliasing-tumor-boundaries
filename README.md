@@ -287,3 +287,6 @@ year={2026},
 url={https://openreview.net/forum?id=F7RaWxyKXD}
 }
 ```
+
+## License
+The source code in this repository is licensed under the [MIT License](LICENSE). The accompanying manuscript and figures are licensed under Creative Commons Attribution 4.0 International (CC-BY 4.0).
